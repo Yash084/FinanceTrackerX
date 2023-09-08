@@ -1,0 +1,49 @@
+
+/* Default styles for larger screens */
+.filters {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+  
+  .filters > div {
+    flex: 1;
+    margin-right: 20px;
+  }
+  
+  .filter-tab {
+    margin-top: 10px;
+  }
+  
+  .switch-icons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .content {
+    margin-top: 20px;
+  }
+  
+  .add-button {
+    margin-top: 10px;
+  }
+  
+  /* Mobile responsive styles for smaller screens */
+  @media screen and (max-width: 768px) {
+    .filters {
+      flex-direction: column;
+    }
+  
+    .filters > div {
+      width: 100%;
+      margin-right: 0;
+      margin-bottom: 10px;
+    }
+  
+    .add-button {
+      width: 100%;
+    }
+  }
+  
