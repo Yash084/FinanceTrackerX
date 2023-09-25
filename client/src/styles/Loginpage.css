@@ -13,6 +13,7 @@
   margin: auto;
   padding: 30px;
   width: auto;
+  border-radius: 20px;
 }
 
 .login-page h1{
@@ -43,3 +44,4 @@
 .login-form a:hover {
   color: black !important;
 }
+

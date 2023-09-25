@@ -11,6 +11,7 @@
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
   padding: 50px;
   width: auto;
+  border-radius: 25px;
 }
 
 .register-form h2 {
@@ -35,7 +36,6 @@
 
 .register-form input:focus {
   border: 1px solid #b87333 !important;
-  color: #b87333;
 }
 .register-form button:hover {
   background-color: black;

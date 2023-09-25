@@ -1,6 +1,6 @@
 const mongoose = require("mongoose");
 
-const transectionSchema = new mongoose.Schema(
+const transactionSchema = new mongoose.Schema(
   {
     userid: {
       type: String,
@@ -18,7 +18,7 @@ const transectionSchema = new mongoose.Schema(
       type: String,
       requires: [true, "cat is required"],
     },
-    refrence: {
+    reference: {
       type: String,
     },
     description: {
@@ -33,5 +33,5 @@ const transectionSchema = new mongoose.Schema(
   { timestamps: true }
 );
 
-const transectionModel = mongoose.model("transections", transectionSchema);
-module.exports = transectionModel;
+const transactionModel = mongoose.model("transactions", transactionSchema);
+module.exports = transactionModel;

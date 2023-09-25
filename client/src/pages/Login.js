@@ -12,13 +12,20 @@ const Login = () => {
     try {
       setLoading(true);
       const { data } = await axios.post("/users/login", values);
-      setLoading(false);
-      message.success("login success");
-      localStorage.setItem(
-        "user",
-        JSON.stringify({ ...data.user, password: "" })
-      );
-      navigate("/");
+      if(data.success)
+      {
+        setLoading(false);
+        message.success("login successfull");
+        localStorage.setItem(
+          "user",
+          JSON.stringify({ ...data.user, password: "" })
+        );
+        navigate("/");
+      }
+      else 
+      {
+         message.error("Incorrect email or password");
+      }
     } catch (error) {
       setLoading(false);
       message.error("something went wrong");

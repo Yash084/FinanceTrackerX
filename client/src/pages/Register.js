@@ -11,8 +11,12 @@ const Register = () => {
   const submitHandler = async (values) => {
     try {
       setLoading(true);
-      await axios.post("/users/register", values);
-      message.success("Registeration Successfull");
+      const res=await axios.post("/users/register", values);
+      console.log(res);
+      if(res.data.success)
+        message.success("Registred Successfully");
+      else 
+      message.error("User already exist");
       setLoading(false);
       navigate("/login");
     } catch (error) {

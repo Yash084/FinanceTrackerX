@@ -6,7 +6,7 @@ const loginController = async (req, res) => {
     const { email, password } = req.body;
     const user = await userModel.findOne({ email, password });
     if (!user) {
-      return res.status(404).send("User Not Found");
+      return res.status(201).send("User Not Found");
     }
     res.status(200).json({
       success: true,
@@ -23,6 +23,12 @@ const loginController = async (req, res) => {
 //Register Callback
 const registerController = async (req, res) => {
   try {
+    const exisitingUser = await userModel.findOne({ email: req.body.email });
+    if (exisitingUser) {
+      return res
+        .status(200)
+        .send({ message: "User Already Exist", success: false });
+    }
     const newUser = new userModel(req.body);
     await newUser.save();
     res.status(201).json({
