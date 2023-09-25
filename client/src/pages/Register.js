@@ -12,7 +12,6 @@ const Register = () => {
     try {
       setLoading(true);
       const res=await axios.post("/users/register", values);
-      console.log(res);
       if(res.data.success)
         message.success("Registred Successfully");
       else 
