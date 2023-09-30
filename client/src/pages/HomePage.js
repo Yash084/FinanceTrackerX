@@ -74,7 +74,7 @@ const HomePage = () => {
     try {
       const user = JSON.parse(localStorage.getItem("user"));
       setLoading(true);
-      const res = await axios.post("/transactions/get-transaction", {
+      const res = await axios.post("/api/v1/transactions/get-transaction", {
         userid: user._id,
         frequency,
         selectedDate,
@@ -97,7 +97,7 @@ const HomePage = () => {
   const handleDelete = async (record) => {
     try {
       setLoading(true);
-      await axios.post("/transactions/delete-transaction", {
+      await axios.post("/api/v1/transactions/delete-transaction", {
         transacationId: record._id,
       });
       setLoading(false);
@@ -126,7 +126,7 @@ const HomePage = () => {
         setLoading(false);
         message.success("Transaction Updated Successfully");
       } else {
-        await axios.post("/transactions/add-transaction", {
+        await axios.post("/api/v1/transactions/add-transaction", {
           ...values,
           userid: user._id,
         });
@@ -230,7 +230,7 @@ const HomePage = () => {
               <Select.Option value="bills">Bills</Select.Option>
               <Select.Option value="medical">Medical</Select.Option>
               <Select.Option value="fee">Fee</Select.Option>
-              <Select.Option value="tax">TAX</Select.Option>
+              <Select.Option value="tax">Tax</Select.Option>
               <Select.Option value="tax">House Rent</Select.Option>
             </Select>
           </Form.Item>

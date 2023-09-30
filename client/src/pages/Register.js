@@ -11,9 +11,9 @@ const Register = () => {
   const submitHandler = async (values) => {
     try {
       setLoading(true);
-      const res=await axios.post("/users/register", values);
+      const res=await axios.post("/api/v1/users/register", values);
       if(res.data.success)
-        message.success("Registred Successfully");
+        message.success("Registered Successfully");
       else 
       message.error("User already exist");
       setLoading(false);
@@ -53,7 +53,7 @@ const Register = () => {
             <Link to="/login">Already Registered? 
             <br />
             login here!</Link>
-            <button className="btn ">Resgiter</button>
+            <button className="btn ">Register</button>
           </div>
         </Form>
       </div>

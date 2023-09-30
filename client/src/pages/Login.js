@@ -11,7 +11,7 @@ const Login = () => {
   const submitHandler = async (values) => {
     try {
       setLoading(true);
-      const { data } = await axios.post("/users/login", values);
+      const { data } = await axios.post("/api/v1/users/login", values);
       if(data.success)
       {
         setLoading(false);
@@ -57,7 +57,7 @@ const Login = () => {
                 <Link to="/register">
                   New User ?
                   <br />
-                  Click Here to regsiter !
+                  Click Here to register !
                 </Link>
                 <button className="btn">Login</button>
               </div>
